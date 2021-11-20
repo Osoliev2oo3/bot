@@ -1,8 +1,6 @@
 import telebot
 import psycopg2
-from telebot import TeleBot
-import random
-# import schedule
+# from telebot import TeleBot
 import datetime
 
 conn = psycopg2.connect(database="timetable",
@@ -18,7 +16,7 @@ token = '2143878695:AAHNOsHNp47GiGkq_gBu8FS0H3IpeSdtXyE'
 bot: TeleBot = telebot.TeleBot(token)
 
 
-@bot.message_handler(commands=['start', '/назад.....'])
+@bot.message_handler(commands=['start'])
 def start(message):
     print(message.chat.id)
     keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
